@@ -66,22 +66,36 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Dashboard gradient colors
-        "gradient-purple": "hsl(var(--gradient-purple))",
+        // Brand gradient colors
         "gradient-cyan": "hsl(var(--gradient-cyan))",
+        "gradient-purple": "hsl(var(--gradient-purple))",
+        "gradient-magenta": "hsl(var(--gradient-magenta))",
         "gradient-dark": "hsl(var(--gradient-dark))",
-        "glow-purple": "hsl(var(--glow-purple))",
         "glow-cyan": "hsl(var(--glow-cyan))",
-        // Marketplace colors
-        badge: {
-          DEFAULT: "hsl(var(--badge))",
-          foreground: "hsl(var(--badge-foreground))",
+        "glow-purple": "hsl(var(--glow-purple))",
+        // Direct brand colors
+        cyan: {
+          DEFAULT: "#00d4ff",
+          50: "#e6fcff",
+          100: "#b3f5ff",
+          200: "#80eeff",
+          300: "#4de7ff",
+          400: "#1ae0ff",
+          500: "#00d4ff",
+          600: "#00a3c7",
+          700: "#00728f",
+          800: "#004157",
+          900: "#00101f",
         },
-        popular: {
-          DEFAULT: "hsl(var(--popular))",
-          foreground: "hsl(var(--popular-foreground))",
+        purple: {
+          DEFAULT: "#8b5cf6",
+          500: "#8b5cf6",
+          600: "#7c3aed",
         },
-        "card-navy": "hsl(var(--card-navy))",
+        magenta: {
+          DEFAULT: "#d946ef",
+          500: "#d946ef",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
