@@ -6,18 +6,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
-import { DemoRequestModal } from "@/components/DemoRequestModal";
-// Update the logo import to match the destination project structure if needed
-// Assuming a default logo or placeholder since original path was specific
-// We'll just remove the img tag specifically or point to a valid asset if known
-// For now, I'll comment out the logo to prevent build error if missing, or use a text fallback
 
 export default function Auth() {
     const [isLogin, setIsLogin] = useState(true);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-    const [showDemoModal, setShowDemoModal] = useState(false);
     const navigate = useNavigate();
     const { toast } = useToast();
 
@@ -131,7 +125,7 @@ export default function Auth() {
                             type="button"
                             variant="outline"
                             className="w-full border-white/30 text-white hover:bg-white/10"
-                            onClick={() => setShowDemoModal(true)}
+                            onClick={() => navigate("/dashboard")}
                         >
                             Try Demo
                         </Button>
@@ -150,10 +144,6 @@ export default function Auth() {
                     </form>
                 </div>
             </div>
-
-            {showDemoModal && (
-                <DemoRequestModal onClose={() => setShowDemoModal(false)} />
-            )}
         </>
     );
 }

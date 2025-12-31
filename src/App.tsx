@@ -74,8 +74,8 @@ function AnimatedRoutes() {
         <Route path="/" element={<PageTransition><LandingPage /></PageTransition>} />
         <Route path="/auth" element={<PageTransition><Auth /></PageTransition>} />
 
-        {/* Protected Dashboard Routes */}
-        <Route path="/dashboard" element={<ProtectedRoute><PortalLayout /></ProtectedRoute>}>
+        {/* Dashboard Routes (Demo Mode - No Auth Required) */}
+        <Route path="/dashboard" element={<PortalLayout />}>
           <Route index element={<PageTransition><Dashboard /></PageTransition>} />
           <Route path="data-quality" element={<PageTransition><DataQuality /></PageTransition>} />
           <Route path="ai-insights" element={<PageTransition><AIInsights /></PageTransition>} />
@@ -84,12 +84,8 @@ function AnimatedRoutes() {
           <Route path="chat" element={<PageTransition><ChatApp /></PageTransition>} />
         </Route>
 
-        {/* Protected Marketplace */}
-        <Route path="/marketplace" element={
-          <ProtectedRoute>
-            <PageTransition><MarketplacePage /></PageTransition>
-          </ProtectedRoute>
-        } />
+        {/* Marketplace (Demo Mode - No Auth Required) */}
+        <Route path="/marketplace" element={<PageTransition><MarketplacePage /></PageTransition>} />
 
         {/* Catch-all */}
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
