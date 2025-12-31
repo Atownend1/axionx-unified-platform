@@ -33,18 +33,18 @@ export default function Auth() {
                 });
                 if (error) throw error;
                 toast({ title: "Welcome back!" });
-                navigate("/chat");
+                navigate("/dashboard");
             } else {
                 const { error } = await supabase.auth.signUp({
                     email,
                     password,
                     options: {
-                        emailRedirectTo: `${window.location.origin}/chat`,
+                        emailRedirectTo: `${window.location.origin}/dashboard`,
                     },
                 });
                 if (error) throw error;
                 toast({ title: "Account created! Redirecting..." });
-                navigate("/chat");
+                navigate("/dashboard");
             }
         } catch (error: any) {
             toast({
@@ -59,16 +59,16 @@ export default function Auth() {
 
     return (
         <>
-            <div className="min-h-screen flex items-center justify-center bg-background p-4">
-                <div className="w-full max-w-md space-y-8 bg-card p-8 rounded-2xl shadow-lg border border-border">
+            <div className="min-h-screen flex items-center justify-center p-4">
+                <div className="w-full max-w-md space-y-8 glass-card p-8 rounded-2xl">
                     <div className="text-center">
                         {/* Logo Placeholder */}
                         <h1 className="text-2xl font-bold mb-6 gradient-text">AxionX Platform</h1>
 
-                        <h2 className="text-3xl font-montserrat font-bold text-foreground">
+                        <h2 className="text-3xl font-montserrat font-bold text-white">
                             {isLogin ? "Welcome Back" : "Create Account"}
                         </h2>
-                        <p className="mt-2 text-muted-foreground font-opensans">
+                        <p className="mt-2 text-white/70 font-opensans">
                             {isLogin
                                 ? "Sign in to continue your conversations"
                                 : "Sign up to start chatting with our AI assistant"}
@@ -78,26 +78,26 @@ export default function Auth() {
                     <form onSubmit={handleAuth} className="space-y-6">
                         <div className="space-y-4">
                             <div>
-                                <Label htmlFor="email">Email</Label>
+                                <Label htmlFor="email" className="text-white">Email</Label>
                                 <Input
                                     id="email"
                                     type="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
-                                    className="mt-1"
+                                    className="mt-1 bg-white/10 border-white/20 text-white placeholder:text-white/50"
                                     placeholder="you@example.com"
                                 />
                             </div>
                             <div>
-                                <Label htmlFor="password">Password</Label>
+                                <Label htmlFor="password" className="text-white">Password</Label>
                                 <Input
                                     id="password"
                                     type="password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
-                                    className="mt-1"
+                                    className="mt-1 bg-white/10 border-white/20 text-white placeholder:text-white/50"
                                     placeholder="••••••••"
                                     minLength={6}
                                 />
@@ -106,7 +106,7 @@ export default function Auth() {
 
                         <Button
                             type="submit"
-                            className="w-full bg-primary hover:bg-primary/90"
+                            className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white"
                             disabled={isLoading}
                         >
                             {isLoading ? (
@@ -120,17 +120,17 @@ export default function Auth() {
 
                         <div className="relative">
                             <div className="absolute inset-0 flex items-center">
-                                <span className="w-full border-t border-border" />
+                                <span className="w-full border-t border-white/20" />
                             </div>
                             <div className="relative flex justify-center text-xs uppercase">
-                                <span className="bg-card px-2 text-muted-foreground">Or</span>
+                                <span className="px-2 text-white/50 bg-transparent">Or</span>
                             </div>
                         </div>
 
                         <Button
                             type="button"
                             variant="outline"
-                            className="w-full"
+                            className="w-full border-white/30 text-white hover:bg-white/10"
                             onClick={() => setShowDemoModal(true)}
                         >
                             Try Demo
