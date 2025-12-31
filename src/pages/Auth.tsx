@@ -60,7 +60,7 @@ export default function Auth() {
     return (
         <>
             <div className="min-h-screen flex items-center justify-center p-4">
-                <div className="w-full max-w-md space-y-8 glass-card p-8 rounded-2xl">
+                <div className="w-full max-w-md space-y-8 p-8 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20">
                     <div className="text-center">
                         {/* Logo Placeholder */}
                         <h1 className="text-2xl font-bold mb-6 gradient-text">AxionX Platform</h1>
